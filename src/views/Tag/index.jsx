@@ -1,6 +1,6 @@
 import "./index.scss";
 
-function Tag() {
+export function Tag() {
   return (
     <div className="Tag"></div>
   )

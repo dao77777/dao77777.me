@@ -1,6 +1,6 @@
 import "./index.scss";
 
-function Blog() {
+export function Blog() {
   return (
     <div className="Blog"></div>
   )

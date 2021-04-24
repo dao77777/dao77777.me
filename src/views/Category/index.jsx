@@ -1,6 +1,6 @@
 import "./index.scss";
 
-function Category() {
+export function Category() {
   return (
     <div className="Category"></div>
   )

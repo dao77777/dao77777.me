@@ -1,6 +1,6 @@
 import "./index.scss";
 
-function HomeLink() {
+export function HomeLink() {
   return (
     <div className="HomeLink"></div>
   )

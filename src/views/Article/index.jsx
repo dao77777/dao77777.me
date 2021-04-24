@@ -1,7 +1,7 @@
 import "./index.scss";
 
-function Article() {
+export function Content() {
   return (
-    <div className="Article"></div>
+    <div className="Content"></div>
   )
 }
