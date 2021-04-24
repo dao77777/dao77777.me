@@ -1,0 +1,16 @@
+@import "../../var.scss";
+
+.dao77777-Input {
+  input {
+    border: 1px solid $color-border;
+    border-radius: $border-radius-base;
+    padding: 0 5px;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    color: $color-primary;
+    &::placeholder {
+      color: $color-primary-light-5;
+    }
+  }
+}

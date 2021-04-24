@@ -1,0 +1,84 @@
+// 基础色
+$color-white: #ffffff !default;
+$color-black: #ffffff !default;
+$color-transparent: transparent !default;
+// 主色
+$color-primary: #2e405b !default;
+$color-primary-light-1: mix($color-white, $color-primary, 10%) !default;
+$color-primary-light-2: mix($color-white, $color-primary, 20%) !default;
+$color-primary-light-3: mix($color-white, $color-primary, 30%) !default;
+$color-primary-light-4: mix($color-white, $color-primary, 40%) !default;
+$color-primary-light-5: mix($color-white, $color-primary, 50%) !default;
+$color-primary-light-6: mix($color-white, $color-primary, 60%) !default;
+$color-primary-light-7: mix($color-white, $color-primary, 70%) !default;
+$color-primary-light-8: mix($color-white, $color-primary, 80%) !default;
+$color-primary-light-9: mix($color-white, $color-primary, 90%) !default;
+// 辅助色
+$color-success: #5bae23 !default;
+$color-success-light-1: mix($color-white, $color-success, 10%) !default;
+$color-success-light-2: mix($color-white, $color-success, 20%) !default;
+$color-success-light-3: mix($color-white, $color-success, 30%) !default;
+$color-success-light-4: mix($color-white, $color-success, 40%) !default;
+$color-success-light-5: mix($color-white, $color-success, 50%) !default;
+$color-success-light-6: mix($color-white, $color-success, 60%) !default;
+$color-success-light-7: mix($color-white, $color-success, 70%) !default;
+$color-success-light-8: mix($color-white, $color-success, 80%) !default;
+$color-success-light-9: mix($color-white, $color-success, 90%) !default;
+$color-warning: #e2c027 !default;
+$color-warning-light-1: mix($color-white, $color-warning, 10%) !default;
+$color-warning-light-2: mix($color-white, $color-warning, 20%) !default;
+$color-warning-light-3: mix($color-white, $color-warning, 30%) !default;
+$color-warning-light-4: mix($color-white, $color-warning, 40%) !default;
+$color-warning-light-5: mix($color-white, $color-warning, 50%) !default;
+$color-warning-light-6: mix($color-white, $color-warning, 60%) !default;
+$color-warning-light-7: mix($color-white, $color-warning, 70%) !default;
+$color-warning-light-8: mix($color-white, $color-warning, 80%) !default;
+$color-warning-light-9: mix($color-white, $color-warning, 90%) !default;
+$color-danger: #f05a46 !default;
+$color-danger-light-1: mix($color-white, $color-danger, 10%) !default;
+$color-danger-light-2: mix($color-white, $color-danger, 20%) !default;
+$color-danger-light-3: mix($color-white, $color-danger, 30%) !default;
+$color-danger-light-4: mix($color-white, $color-danger, 40%) !default;
+$color-danger-light-5: mix($color-white, $color-danger, 50%) !default;
+$color-danger-light-6: mix($color-white, $color-danger, 60%) !default;
+$color-danger-light-7: mix($color-white, $color-danger, 70%) !default;
+$color-danger-light-8: mix($color-white, $color-danger, 80%) !default;
+$color-danger-light-9: mix($color-white, $color-danger, 90%) !default;
+// 中性色-文字
+$color-text-primary: #2e405b !default;
+$color-text-normal: mix($color-white, $color-text-primary, 20%) !default;
+$color-text-secondary: mix($color-white, $color-text-primary, 40%) !default;
+$color-text-placeholder: mix($color-white, $color-text-primary, 60%) !default;
+// 中性色-边框
+$color-border: #d4cfe6 !default;
+$color-border-light-1: #dbd5ed !default;
+$color-border-light-2: #e2dcf5 !default;
+$color-border-light-3: #e9e3fc !default;
+
+// 字体
+$font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif !default;
+// 字号
+$font-size-extra-small: 12px !default;
+$font-size-small: 13px !default;
+$font-size-base: 14px !default;
+$font-size-medium: 16px !default;
+$font-size-large: 18px !default;
+$font-size-extra-large: 20px !default;
+// 行高
+$font-line-height-none: 1 !default;
+$font-line-height-dense: 1.3 !default;
+$font-line-height-normal: 1.5 !default;
+$font-line-height-loose: 1.7 !default;
+
+// 边框宽
+$border-width-solid: 1px !default;
+$border-width-dotted: 2px !default;
+// 圆角
+$border-radius-none: 0px !default;
+$border-radius-small: 2px !default;
+$border-radius-base: 4px !default;
+$border-radius-round: 30px !default;
+
+// 阴影
+$box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04) !default;
+$box-shadow-soft: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;

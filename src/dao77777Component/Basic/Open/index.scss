@@ -1,0 +1,144 @@
+@import "../../var.scss";
+
+.dao77777-Open {
+  &.color-primary {
+    .line {
+      border-color: $color-primary;
+    }
+  }
+  &.color-success {
+    .line {
+      border-color: $color-success;
+    }
+  }
+  &.color-warning {
+    .line {
+      border-color: $color-warning;
+    }
+  }
+  &.color-danger {
+    .line {
+      border-color: $color-danger;
+    }
+  }
+  &.size-base {
+    &.opened-true {
+      .line1 {
+        transform: translateY(7px) rotate(45deg);
+      }
+  
+      .line2 {
+        transform: translateX(10px);
+        opacity: 0;
+      }
+  
+      .line3 {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+    }
+
+    .line {
+      border-width: 1px;
+      border-style: solid;
+      width: 20px;
+    }
+  
+    .line2 {
+      margin-top: 5px;
+    }
+  
+    .line3 {
+      margin-top: 5px;
+    }
+  }
+  &.size-mini {
+    &.opened-true {
+      .line1 {
+        transform: translateY(5px) rotate(45deg);
+      }
+  
+      .line2 {
+        transform: translateX(8px);
+        opacity: 0;
+      }
+  
+      .line3 {
+        transform: translateY(-5px) rotate(-45deg);
+      }
+    }
+
+    .line {
+      border-width: 1px;
+      border-style: solid;
+      width: 16px;
+    }
+  
+    .line2 {
+      margin-top: 3px;
+    }
+  
+    .line3 {
+      margin-top: 3px;
+    }
+  }
+  &.size-medium {
+    &.opened-true {
+      .line1 {
+        transform: translateY(8px) rotate(45deg);
+      }
+  
+      .line2 {
+        transform: translateX(11px);
+        opacity: 0;
+      }
+  
+      .line3 {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+
+    .line {
+      border-width: 1px;
+      border-style: solid;
+      width: 22px;
+    }
+  
+    .line2 {
+      margin-top: 6px;
+    }
+  
+    .line3 {
+      margin-top: 6px;
+    }
+  }
+  &.size-large {
+    &.opened-true {
+      .line1 {
+        transform: translateY(10px) rotate(45deg);
+      }
+  
+      .line2 {
+        transform: translateX(13px);
+        opacity: 0;
+      }
+  
+      .line3 {
+        transform: translateY(-10px) rotate(-45deg);
+      }
+    }
+
+    .line {
+      border-width: 1px;
+      border-style: solid;
+      width: 26px;
+    }
+  
+    .line2 {
+      margin-top: 8px;
+    }
+  
+    .line3 {
+      margin-top: 8px;
+    }
+  }
+}

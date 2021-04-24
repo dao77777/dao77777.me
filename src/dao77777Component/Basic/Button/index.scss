@@ -1,0 +1,191 @@
+@import "../../var.scss";
+
+.dao77777-Button {
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  user-select: none;
+  &.type-boring {
+    border: none;
+    color: $color-white;
+    &.color-primary {
+      &.disabled-false {
+        background-color: $color-primary;
+        &:hover {
+          background-color: $color-primary-light-1;
+        }
+      }
+      &.disabled-true {
+        background-color: $color-primary-light-5;
+        cursor: not-allowed;
+      }
+    }
+    &.color-success {
+      &.disabled-false {
+        background-color: $color-success;
+        &:hover {
+          background-color: $color-success-light-1;
+        }
+      }
+      &.disabled-true {
+        background-color: $color-success-light-5;
+        cursor: not-allowed;
+      }
+    }
+    &.color-warning {
+      &.disabled-false {
+        background-color: $color-warning;
+        &:hover {
+          background-color: $color-warning-light-1;
+        }
+      }
+      &.disabled-true {
+        background-color: $color-warning-light-5;
+        cursor: not-allowed;
+      }
+    }
+    &.color-danger {
+      &.disabled-false {
+        background-color: $color-danger;
+        &:hover {
+          background-color: $color-danger-light-1;
+        }
+      }
+      &.disabled-true {
+        background-color: $color-danger-light-5;
+        cursor: not-allowed;
+      }
+    }
+  }
+  &.type-wow {
+    &.color-primary {
+      &.disabled-false {
+        border: 1px solid $color-primary-light-5;
+        background-color: $color-primary-light-9;
+        color: $color-primary;
+        &:hover {
+          border: 1px solid $color-primary;
+          background-color: $color-primary;
+          color: $color-white;
+        }
+      }
+      &.disabled-true {
+        border: 1px solid $color-primary-light-8;
+        background-color: $color-primary-light-9;
+        color: $color-primary-light-5;
+        cursor: not-allowed;
+      }
+    }
+    &.color-success {
+      &.disabled-false {
+        border: 1px solid $color-success-light-5;
+        background-color: $color-success-light-9;
+        color: $color-success;
+        &:hover {
+          border: 1px solid $color-success;
+          background-color: $color-success;
+          color: $color-white;
+        }
+      }
+      &.disabled-true {
+        border: 1px solid $color-success-light-8;
+        background-color: $color-success-light-9;
+        color: $color-success-light-5;
+        cursor: not-allowed;
+      }
+    }
+    &.color-warning {
+      &.disabled-false {
+        border: 1px solid $color-warning-light-5;
+        background-color: $color-warning-light-9;
+        color: $color-warning;
+        &:hover {
+          border: 1px solid $color-warning;
+          background-color: $color-warning;
+          color: $color-white;
+        }
+      }
+      &.disabled-true {
+        border: 1px solid $color-warning-light-8;
+        background-color: $color-warning-light-9;
+        color: $color-warning-light-5;
+        cursor: not-allowed;
+      }
+    }
+    &.color-danger {
+      &.disabled-false {
+        border: 1px solid $color-danger-light-5;
+        background-color: $color-danger-light-9;
+        color: $color-danger;
+        &:hover {
+          border: 1px solid $color-danger;
+          background-color: $color-danger;
+          color: $color-white;
+        }
+      }
+      &.disabled-true {
+        border: 1px solid $color-danger-light-8;
+        background-color: $color-danger-light-9;
+        color: $color-danger-light-5;
+        cursor: not-allowed;
+      }
+    }
+  }
+  &.size-base {
+    padding: 10px 20px;
+    font-size: $font-size-base;
+    &.border-circle {
+      width: 38px;
+      height: 38px;
+      line-height: 38px;
+    }
+  }
+  &.size-mini {
+    padding: 8px 16px;
+    font-size: $font-size-extra-small;
+    &.border-circle {
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+    }
+  }
+  &.size-small {
+    padding: 9px 18px;
+    font-size: $font-size-small;
+    &.border-circle {
+      width: 35px;
+      height: 35px;
+      line-height: 35px;
+    }
+  }
+  &.size-medium {
+    padding: 12px 24px;
+    font-size: $font-size-medium;
+    &.border-circle {
+      width: 44px;
+      height: 44px;
+      line-height: 44px;
+    }
+  }
+  &.size-large {
+    padding: 14px 28px;
+    font-size: $font-size-large;
+    &.border-circle {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+    }
+  }
+  &.border-base {
+    border-radius: $border-radius-base;
+  }
+  &.border-round {
+    border-radius: $border-radius-round;
+  }
+  &.border-circle {
+    border-radius: 50%;
+    padding: 0;
+    text-align: center;
+  }
+}
