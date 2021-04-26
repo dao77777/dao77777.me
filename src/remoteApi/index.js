@@ -1,17 +1,26 @@
 import { http } from "./init";
+import { formTime } from "../tools/formTime";
 
 // home
-
 async function home_getArticleCardArray(pageNum) {
-  return await http({
-    url: "/home/home_getArticleCardArray",
+  // 请求
+  const res = await http({
+    url: "/home/getArticleCardArray",
     data: { pageNum }
   })
+
+  // 返回值处理
+  if (res.status === 200) {
+    const processedRes = { ...res, data: res.data.map(item => ({ ...item, timeCreate: formTime(item.timeCreate) })) };
+    return processedRes;
+  }
+
+  return res;
 }
 
 async function home_routerLink_blogLink_getAuthorInfo(nickname, signature) {
   return await http({
-    url: "/admin/user/login",
+    url: "/home/routerLink/blogLink/getAuthorInfo",
     data: { nickname, signature },
   })
 }
@@ -24,7 +33,6 @@ async function home_articleCard_updateClickCount(id) {
 }
 
 // article
-
 async function article_content_getArticle(id) {
   return await http({
     url: "/article/content/getArticle",

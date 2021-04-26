@@ -1,0 +1,26 @@
+@import "../../../../dao77777/var.scss";
+
+.RouterLink {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .BlogLink {
+    margin-bottom: 20px;
+  }
+
+  .router {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+
+    i {
+      line-height: $font-size-base;
+    }
+
+    .dao77777-TextA {
+      line-height: $font-size-base;
+      margin-left: 10px;
+    }
+  }
+}

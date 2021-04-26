@@ -3,14 +3,14 @@ const messageBorderRadius = "5px";
 const messageMarginTop = "10px";
 const messagePadding = "5px 20px 5px 15px";
 const messageBackgroundColor = {
-  info: "#8076A3",
+  info: "#2e405b",
   success: "#5BAE23",
   warning: "#E2C027",
   error: "#F05A46",
 };
 const messageFontSize = "14px";
 const messageFontColor = {
-  info: "#DDD8F2",
+  info: "#9db0c2",
   success: "#E2F2D8",
   warning: "#F2EDD8",
   error: "#F2D8D8",
@@ -99,7 +99,7 @@ function render() {
     const root = document.querySelector("#root");
     messageContainer = document.createElement("div");
     messageContainer.setAttribute("id", "messageContainer");
-    messageContainer.style.position = "absolute";
+    messageContainer.style.position = "fixed";
     messageContainer.style.top = messageMarginTop;
     messageContainer.style.left = "50%";
     messageContainer.style.display = "flex";

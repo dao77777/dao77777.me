@@ -1,0 +1,36 @@
+@import "../../dao77777/var.scss";
+
+.Home {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  user-select: none;
+
+  main {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .card {
+      width: 100%;
+
+      .ArticleCard {
+        border-bottom: $border-width-dotted dotted $color-border-light-3;
+        margin-top: 100px;
+        padding-bottom: 20px;
+        &:nth-of-type(1) {
+          margin-top: unset;
+        }
+      }
+    }
+
+    .Page {
+      margin-top: 50px;
+    }
+  }
+
+  .RouterLink {
+    margin-left: 100px;
+  }
+}

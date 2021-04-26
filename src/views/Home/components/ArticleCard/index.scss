@@ -1,0 +1,40 @@
+@import "../../../../dao77777/var.scss";
+
+.ArticleCard {
+  .dao77777-TextA {
+  }
+  .timeCreate {
+    margin-top: 20px;
+    font-size: 12px;
+  }
+  .articleInfo {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+
+    > span {
+      margin-right: 15px;
+      display: flex;
+      line-height: 12px;
+      align-items: center;
+
+      i {
+      }
+
+      span {
+        margin-left: 5px;
+        font-size: 12px;
+        
+      }
+
+      .dao77777-TextA {
+        margin-left: 5px;
+        font-size: 12px;
+      }
+    }
+  }
+  .introduce {
+    margin-top: 40px;
+    font-size: 17px;
+  }
+}
