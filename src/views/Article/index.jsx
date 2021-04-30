@@ -1,12 +1,42 @@
 import "./index.scss";
-import { Content } from "./components/Content";
-import { Comment } from "./components/Comment";
+import { Content } from "./Content";
+import { Comment } from "./Comment";
+import { useEffect, useState } from "react";
 
 export function Article() {
+  // 状态
+  const [isArticleLoaded, setIsArticleLoaded] = useState(false);
+  const [isCommentLoaded, setIsCommentLoaded] = useState(false);
+  const [isImgLoaded, setIsImgLoaded] = useState(false);
+  const [transition, setTransition] = useState("beforeEnter");
+
+  // 监听
+  function setIsArticleLoaded_api(val) {
+    setIsArticleLoaded(val);
+  }
+  function setIsCommentLoaded_api(val) {
+    setIsCommentLoaded(val);
+  }
+  function setIsImgLoaded_api(val) {
+    setIsImgLoaded(val);
+  }
+  // 生命周期
+  function enter() {
+    setTransition("entering");
+    setTimeout(() => {
+      setTransition("entered");
+    }, 1000)
+  }
+
+  useEffect(() => {
+    if (isArticleLoaded && isCommentLoaded && isImgLoaded) {
+      enter();
+    }
+  }, [isArticleLoaded, isCommentLoaded, isImgLoaded])
   return (
     <div className="Article">
-      <Content></Content>
-      <Comment></Comment>
+      <Content transition={transition} onSetIsArticleLoaded={setIsArticleLoaded_api} onSetIsImgLoaded={setIsImgLoaded_api}></Content>
+      <Comment transition={transition} onSetIsCommentLoaded={setIsCommentLoaded_api}></Comment>
     </div>
   )
 }

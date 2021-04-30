@@ -1,0 +1,32 @@
+.Comment {
+  &.beforeEnter {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  &.entering {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 1s;
+  }
+  &.entered {
+
+  }
+  &.beforeLeave {
+
+  }
+  &.leaving {
+
+  }
+  &.leaved {
+
+  }
+
+  .CommentEdit {
+    width: 100%;
+  }
+
+  .CommentCard {
+    margin-top: 40px;
+    width: 100%;
+  }
+}

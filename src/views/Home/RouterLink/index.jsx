@@ -1,7 +1,7 @@
 import "./index.scss";
-import { BlogLink } from "./components/BlogLink";
+import { BlogLink } from "./BlogLink";
 import { withRouter } from "react-router-dom";
-import { TextA } from "../../../../dao77777";
+import { TextA } from "../../../dao77777";
 
 
 export const RouterLink = withRouter((props) => {

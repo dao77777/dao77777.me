@@ -1,0 +1,15 @@
+.Article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .Content {
+    width: 800px;
+  }
+
+  .Comment {
+    margin: 70px 0 70px 0;
+    width: 800px;
+  }
+}

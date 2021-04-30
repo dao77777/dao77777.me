@@ -1,4 +1,4 @@
-@import "../../../../../../dao77777/var.scss";
+@import "../../../../dao77777/var.scss";
 
 .BlogLink {
   border-left: $border-width-solid solid $color-primary;
@@ -22,7 +22,7 @@
   p:nth-child(1) {
     width: 10px;
     font-size: 12px;
-    color: $color-white;
+    color: rgba($color: $color-white, $alpha: 0.7);
     transform: translateY(-10px);
     transition: all 0.24s;
   }

@@ -14,6 +14,18 @@
 
     .card {
       width: 100%;
+      &.before {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+      &.ing {
+        opacity: 1;
+        transform: translateX(0px);
+        transition: all 1s;
+      }
+      &.after {
+
+      }
 
       .ArticleCard {
         border-bottom: $border-width-dotted dotted $color-border-light-3;
@@ -25,12 +37,38 @@
       }
     }
 
-    .Page {
+    .PageWrap {
       margin-top: 50px;
+      &.before {
+        opacity: 0;
+        transform: translateY(-100px);
+      }
+      &.ing {
+        opacity: 1;
+        transform: translateY(0px);
+        transition: all 1s;
+      }
+      &.after {
+    
+      }
     }
   }
 
-  .RouterLink {
+  .RouterLinkWrap {
+    position: sticky;
+    top: 0px;
     margin-left: 100px;
+    &.before {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+    &.ing {
+      opacity: 1;
+      transform: translateY(0px);
+      transition: all 1s;
+    }
+    &.after {
+  
+    }
   }
 }

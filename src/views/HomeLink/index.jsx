@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { withRouter } from "react-router";
+import { store } from "../../store";
 import "./index.scss";
 
 export const HomeLink = withRouter((props) => {
+  // 全局
+  const { icon } = useContext(store);
   // 域外
   const { push } = props.history;
   // 监听
@@ -11,7 +15,7 @@ export const HomeLink = withRouter((props) => {
 
   return (
     <div className="HomeLink" onClick={toHome}>
-      <img src="https://dao77777-blog.oss-cn-chengdu.aliyuncs.com/icon/favicon.png" alt="" />
+      <img src={icon} alt="" />
     </div>
   );
 });

@@ -1,0 +1,90 @@
+@import "../../../../dao77777/var.scss";
+
+.CommentCard {
+  display: flex;
+  align-items: flex-start;
+  font-size: 12px;
+  color: $color-primary-light-5;
+
+  .colorBall {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .right {
+    margin-left: 20px;
+    width: calc(100% - 60px);
+
+    .info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .comment {
+        width: calc(100% - 50px);
+
+        .commentInfo {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+
+          a {
+            margin-left: 0px;
+            font-size: 17px;
+            font-weight: bold;
+            color: $color-success;
+            text-decoration: none;
+            cursor: pointer;
+            &:hover {
+              color: $color-danger;
+            }
+          }
+
+          span {
+            margin-left: 30px;
+          }
+        }
+        .timeCreate {
+          margin-top: 5px;
+        }
+
+        .content {
+          margin-top: 30px;
+          color: $color-primary;
+          font-size: 15px;
+
+          a {
+            color: $color-success;
+            text-decoration: none;
+            cursor: pointer;
+            &:hover {
+              color: $color-danger;
+            }
+          }
+        }
+      }
+
+      .reply {
+        width: 50px;
+        flex-shrink: 0;
+        color: $color-danger-light-5;
+        text-align: right;
+        cursor: pointer;
+        user-select: none;
+      }
+    }
+
+    .CommentEdit {
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .children {
+      padding: 0 0 20px 20px;
+      border-left: 1px dashed $color-border-light-1;
+      border-bottom: 1px dashed $color-border-light-1;
+    }
+  }
+}
