@@ -2,7 +2,7 @@ import "./index.scss";
 
 export function Page(props) {
   // 属性
-  const { pageNum } = props;
+  const { homeRoutePageNum } = props;
   // 域外
   const { onForward, onBack } = props;
   // 监听
@@ -16,7 +16,7 @@ export function Page(props) {
   return (
     <div className="Page">
       <i className="back iconfont icon-left-circle" onClick={back}></i>
-      <span>{ pageNum }</span>
+      <span>{ homeRoutePageNum }</span>
       <i className="forward iconfont icon-right-circle" onClick={forward}></i>
     </div>
   )

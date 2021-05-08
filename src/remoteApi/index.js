@@ -1,9 +1,9 @@
-import { http } from "./init";
-import { formTime } from "../tools/formTime";
+import { request } from "./init";
+import { formTime } from "../utils/formTime";
 
 // store
 async function store_getBlogInfo() {
-  return await http({
+  return await request({
     url: "/store/getBlogInfo",
   })
 }
@@ -11,7 +11,7 @@ async function store_getBlogInfo() {
 // home
 async function home_getArticleCardArray(pageNum) {
   // 请求
-  const res = await http({
+  const res = await request({
     url: "/home/getArticleCardArray",
     data: { pageNum }
   })
@@ -26,7 +26,7 @@ async function home_getArticleCardArray(pageNum) {
 }
 
 async function home_articleCard_updateClickCount(id) {
-  return await http({
+  return await request({
     url: "/home/articleCard/updateClickCount",
     data: { id },
   })
@@ -35,7 +35,7 @@ async function home_articleCard_updateClickCount(id) {
 // article
 async function article_content_getArticle(id) {
   // 请求
-  const res = await http({
+  const res = await request({
     url: "/article/content/getArticle",
     data: { id },
   })
@@ -50,7 +50,7 @@ async function article_content_getArticle(id) {
 }
 async function article_comment_getComment(id) {
   // 请求
-  const res = await http({
+  const res = await request({
     url: "/article/comment/getComment",
     data: { id },
   })
@@ -68,13 +68,13 @@ async function article_comment_getComment(id) {
   return { ...res, data: dfs(res.data) };
 }
 async function article_comment_insertCommit(id, nickname, email, site, content) {
-  return await http({
+  return await request({
     url: "/article/comment/insertCommit",
     data: { id, nickname, email, site, content },
   })
 }
 async function article_comment_commentCard_insertCommit(id, nickname, email, site, content) {
-  return await http({
+  return await request({
     url: "/article/comment/commentCard/insertCommit",
     data: { id, nickname, email, site, content },
   })

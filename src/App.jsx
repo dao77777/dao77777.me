@@ -7,6 +7,7 @@ import { Archive } from "./views/Archive";
 import { Category } from "./views/Category";
 import { Home } from "./views/Home";
 import { Tag } from "./views/Tag";
+import { Other } from "./views/Other";
 import { useContext, useState } from "react";
 import { store } from "./store";
 import { ToTop } from "./views/ToTop";
@@ -56,6 +57,7 @@ function App() {
         <Route path="/archive" component={Archive}></Route>
         <Route path="/category" component={Category}></Route>
         <Route path="/tag" component={Tag}></Route>
+        <Route path="/other" component={Other}></Route>
         <Redirect to="/home"></Redirect>
       </Switch>
     </div>

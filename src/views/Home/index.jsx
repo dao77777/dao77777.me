@@ -2,7 +2,7 @@ import "./index.scss";
 import { ArticleCard } from "./ArticleCard";
 import { Page } from "./Page";
 import { RouterLink } from "./RouterLink";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { remoteApi } from "../../remoteApi";
 import { message } from "../../dao77777";
 import { store } from "../../store";
@@ -13,34 +13,37 @@ export function Home() {
   const [articleCardArr, setArticleCardArr] = useState([]);
   const [isArticleCardArrLoaded, setIsArticleCardArrLoaded] = useState(false);
   const [homeLoading, setHomeLoading] = useState(0);
-  const [pageNum, setPageNum] = useState(1);
+  // 路由
+  const { homeRoutePageNum } = useContext(store);
   // 域外
   const { home_getArticleCardArray } = remoteApi();
   const { messageSend } = message();
   const { isBlogLoaded } = useContext(store);
-  const app = document.querySelector(".App");
+  const dom = document;
+  const { setHomeRoutePageNum } = useContext(store);
+  const { homeRouteScrollTop, setHomeRouteScrollTop } = useContext(store);
   // 监听
   async function forward() {
-    const res = await getArticleCardArr(pageNum + 1);
+    const res = await getArticleCardArr(homeRoutePageNum + 1);
     if (res.status === 200) {
-      setPageNum(pageNum + 1);
-      app.scrollTop = 0;
+      setHomeRoutePageNum(homeRoutePageNum + 1);
+      dom.querySelector(".App").scrollTop = 0;
     }
   }
   async function back() {
-    if (pageNum <= 1) {
+    if (homeRoutePageNum <= 1) {
       messageSend("info", "已经是首页了");
       return;
     }
-    const res = await getArticleCardArr(pageNum - 1);
+    const res = await getArticleCardArr(homeRoutePageNum - 1);
     if (res.status === 200) {
-      setPageNum(pageNum - 1);
-      app.scrollTop = 0;
+      setHomeRoutePageNum(homeRoutePageNum - 1);
+      dom.querySelector(".App").scrollTop = 0;
     }
   }
   // 生命周期
   async function getFirstPageArticleCardArr() {
-    await getArticleCardArr(pageNum);
+    await getArticleCardArr(homeRoutePageNum);
     setIsArticleCardArrLoaded(true);
   }
   function changeHomeLoading() {
@@ -49,9 +52,15 @@ export function Home() {
       setHomeLoading(2);
     }, 1000);
   }
+  function getScrollTop() {
+    dom.querySelector(".App").scrollTop = homeRouteScrollTop;
+  }
+  function markScrollTop() {
+    setHomeRouteScrollTop(dom.querySelector(".App").scrollTop);
+  }
   // 副作用
-  async function getArticleCardArr(pageNum) {
-    const res = await home_getArticleCardArray(pageNum);
+  async function getArticleCardArr(homeRoutePageNum) {
+    const res = await home_getArticleCardArray(homeRoutePageNum);
     if (res.status === 200) {
       if (res.data.length === 0) {
         messageSend("info", "已经是尾页了");
@@ -66,10 +75,18 @@ export function Home() {
 
   useEffect(() => {
     getFirstPageArticleCardArr();
+    return () => {
+    };
+  }, []);
+  useLayoutEffect(() => {
+    return () => {
+      markScrollTop();
+    };
   }, []);
   useEffect(() => {
     if (isArticleCardArrLoaded && isBlogLoaded) {
       changeHomeLoading();
+      getScrollTop();
     }
   }, [isArticleCardArrLoaded, isBlogLoaded]);
   const homeLoadingStatus =
@@ -83,7 +100,11 @@ export function Home() {
           ))}
         </div>
         <div className={"PageWrap " + homeLoadingStatus}>
-          <Page onForward={forward} onBack={back} pageNum={pageNum}></Page>
+          <Page
+            onForward={forward}
+            onBack={back}
+            homeRoutePageNum={homeRoutePageNum}
+          ></Page>
         </div>
       </main>
       <div className={"RouterLinkWrap " + homeLoadingStatus}>

@@ -9,7 +9,8 @@ export function Article() {
   const [isCommentLoaded, setIsCommentLoaded] = useState(false);
   const [isImgLoaded, setIsImgLoaded] = useState(false);
   const [transition, setTransition] = useState("beforeEnter");
-
+  // 域外
+  const dom = document;
   // 监听
   function setIsArticleLoaded_api(val) {
     setIsArticleLoaded(val);
@@ -28,6 +29,9 @@ export function Article() {
     }, 1000)
   }
 
+  useEffect(() => {
+    dom.querySelector(".App").scrollTop = 0;
+  }, [])
   useEffect(() => {
     if (isArticleLoaded && isCommentLoaded && isImgLoaded) {
       enter();

@@ -19,21 +19,17 @@ export const ArticleCard = withRouter((props) => {
   // 域外
   const { push } = props.history;
   const { home_articleCard_updateClickCount } = remoteApi();
-  const app = document.querySelector(".App");
   // 监听
   async function toArticle() {
-    await home_articleCard_updateClickCount(id);
+    home_articleCard_updateClickCount(id);
     push("/article", { id });
-    app.scrollTop = 0;
   }
   function toCategory() {
     push("/category", { categoryName });
-    app.scrollTop = 0;
   }
   function toTag(tagName) {
     return () => {
       push("/tag", { tagName });
-      app.scrollTop = 0;
     };
   }
 

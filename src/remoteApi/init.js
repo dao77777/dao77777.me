@@ -1,24 +1,35 @@
-import axios from "axios";
-import { message } from "../dao77777"
+import axios from 'axios';
 
-const { messageSend } = message();
-axios.defaults.baseURL = "http://localhost:7001/ui";
-axios.defaults.method = "POST";
-axios.defaults.headers = {
-  "Content-Type": "application/json;charset=utf-8"
-};
+const service = axios.create({
+  baseURL: "http://localhost:7001/ui",
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json;charset=utf-8"
+  },
+  timeout: 10000
+})
 
-
-
-export async function http(config) {
-  try {
-    const res = (await axios(config)).data;
-    if (res.status !== 200) {
-      messageSend("error", res.statusMessage);
-    };
-    return res;
-  } catch (error) {
-    messageSend("error", error.toString());
+// request interceptor
+service.interceptors.request.use(
+  config => {
+    return config
+  },
+  error => {
+    console.log(error)
     return { status: 500, statusMessage: "服务器错误", data: null };
   }
-};
+)
+
+service.interceptors.response.use(
+  response => {
+    const res = response.data;
+
+    return res;
+  },
+  error => {
+    console.log(error);
+    return { status: 500, statusMessage: "服务器错误", data: null };
+  }
+)
+
+export const request = service;
