@@ -22,8 +22,6 @@ export { Open } from "./Basic/Open";
 export { TextA } from "./Basic/TextA";
 export { Input } from "./Basic/Input";
 
-export { Nav } from "./Nav";
-
 export { Table } from "./Data/Table";
 
 export { Dialog } from "./Dialog";

@@ -1,15 +1,15 @@
 @import "../../../dao77777/var.scss";
 
-.RouterLink {
+.Link {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 
-  .BlogLink {
+  .MainLink {
     margin-bottom: 20px;
   }
 
-  .router {
+  .link {
     margin-bottom: 10px;
     display: flex;
     align-items: center;

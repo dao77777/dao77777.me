@@ -10,16 +10,13 @@ export const Comment = withRouter((props) => {
   // 状态
   const [comment, setComment] = useState([]);
   // 属性
-  const { transition } = props;
-  // 路由
-  const { id } = props.location.state;
+  const { onSetIsCommentLoaded, transition, location: { state: { id } } } = props;
   // 域外
   const {
     article_comment_getComment,
     article_comment_insertCommit,
   } = remoteApi();
   const { messageSend } = message();
-  const { onSetIsCommentLoaded } = props;
   // 监听
   async function submit(nickname, email, site, content) {
     function convert(str) {
@@ -33,7 +30,7 @@ export const Comment = withRouter((props) => {
     // 输入校验
     const verifyContent = processedContent === null ? false : true;
     const verifyEmail = processedEmail ? /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(processedEmail) : true;
-    const verifySite = processedSite ? /[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/.test(processedSite) : true;
+    const verifySite = processedSite ? /[\w\-_]+(\.[\w\-_]+)+([\w\-.,@?^=%&:/~+#]*[\w\-@?^=%&/~+#])?/.test(processedSite) : true;
 
     if (!verifyContent) {
       messageSend("error", "评论内容不能为空(●'◡'●)");
@@ -59,22 +56,28 @@ export const Comment = withRouter((props) => {
   async function getComment_api() {
     await getComment();
   }
-  // 生命周期
-  async function getComment_life() {
-    await getComment();
-    onSetIsCommentLoaded(true);
-  }
-  // 副作用
+
   async function getComment() {
     const res = await article_comment_getComment(id);
     if (res.status === 200) {
       setComment(res.data);
     }
   }
-
+  // 副作用
   useEffect(() => {
+    const { article_comment_getComment } = remoteApi();
+    async function getComment_life() {
+      await getComment();
+      onSetIsCommentLoaded(true);
+    }
+    async function getComment() {
+      const res = await article_comment_getComment(id);
+      if (res.status === 200) {
+        setComment(res.data);
+      }
+    }
     getComment_life();
-  }, []);
+  }, [onSetIsCommentLoaded, id]);
   return (
     <div className={"Comment " + transition}>
       <CommentEdit onSubmit={submit}></CommentEdit>

@@ -23,7 +23,6 @@ export function CommentCard(props) {
   } = props;
   // 域外
   const { article_comment_commentCard_insertCommit } = remoteApi();
-  const random = Math.random;
   const { onGetComment } = props;
   const { messageSend } =message();
   // 监听
@@ -39,7 +38,7 @@ export function CommentCard(props) {
     // 输入校验
     const verifyContent = processedContent === null ? false : true;
     const verifyEmail = processedEmail ? /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(processedEmail) : true;
-    const verifySite = processedSite ? /[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/.test(processedSite) : true;
+    const verifySite = processedSite ? /[\w\-_]+(\.[\w\-_]+)+([\w\-.,@?^=%&:/~+#]*[\w\-@?^=%&/~+#])?/.test(processedSite) : true;
 
     if (!verifyContent) {
       messageSend("error", "评论内容不能为空(●'◡'●)");
@@ -69,14 +68,13 @@ export function CommentCard(props) {
     setIsShowCommentEdit(false);
   }
   // 生命周期
-  function getColor() {
-    const randomR = Math.ceil(random() * 100 + 155);
-    const randomG = Math.ceil(random() * 100 + 155);
-    const randomB = Math.ceil(random() * 100 + 155);
-    setColor(`rgb(${randomR}, ${randomG}, ${randomB})`);
-  }
-
   useEffect(() => {
+    function getColor() {
+      const randomR = Math.ceil(Math.random() * 100 + 155);
+      const randomG = Math.ceil(Math.random() * 100 + 155);
+      const randomB = Math.ceil(Math.random() * 100 + 155);
+      setColor(`rgb(${randomR}, ${randomG}, ${randomB})`);
+    }
     getColor();
   }, []);
   return (

@@ -13,7 +13,6 @@ export const Content = withRouter((props) => {
   // 路由
   const { id } = props.location.state;
   // 域外
-  const { article_content_getArticle } = remoteApi();
   const { push } = props.history;
   const { onSetIsArticleLoaded, onSetIsImgLoaded } = props
   // 监听
@@ -29,17 +28,17 @@ export const Content = withRouter((props) => {
     onSetIsImgLoaded(true);
   }
   // 生命周期
-  async function getArticle() {
-    const res = await article_content_getArticle(id);
-    if (res.status === 200) {
-      setArticle(res.data);
-      onSetIsArticleLoaded(true);
-    }
-  }
-
   useEffect(() => {
+    const { article_content_getArticle } = remoteApi();
+    async function getArticle() {
+      const res = await article_content_getArticle(id);
+      if (res.status === 200) {
+        setArticle(res.data);
+        onSetIsArticleLoaded(true);
+      }
+    }
     getArticle();
-  }, []);
+  }, [onSetIsArticleLoaded, id]);
   return (
     <div className="Content">
       <h1 className={transition}>{article.title}</h1>

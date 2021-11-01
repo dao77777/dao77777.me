@@ -10,7 +10,6 @@ export function Article() {
   const [isImgLoaded, setIsImgLoaded] = useState(false);
   const [transition, setTransition] = useState("beforeEnter");
   // 域外
-  const dom = document;
   // 监听
   function setIsArticleLoaded_api(val) {
     setIsArticleLoaded(val);
@@ -30,6 +29,7 @@ export function Article() {
   }
 
   useEffect(() => {
+    const dom = document;
     dom.querySelector(".App").scrollTop = 0;
   }, [])
   useEffect(() => {

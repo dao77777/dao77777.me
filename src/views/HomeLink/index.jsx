@@ -1,21 +1,11 @@
-import { useContext } from "react";
-import { withRouter } from "react-router";
-import { store } from "../../store";
 import "./index.scss";
 
-export const HomeLink = withRouter((props) => {
-  // 全局
-  const { icon } = useContext(store);
-  // 域外
-  const { push } = props.history;
-  // 监听
-  function toHome() {
-    push("/home");
-  }
+export function HomeLink(props) {
+  const { onClick, icon } = props;
 
   return (
-    <div className="HomeLink" onClick={toHome}>
+    <div className="HomeLink" onClick={onClick}>
       <img src={icon} alt="" />
     </div>
   );
-});
+};
